@@ -1,8 +1,9 @@
 console.log(' ----- 開始（非同期処理） ----- ');
 
-const fs = require('fs');
+const path = require('path');
+const fs   = require('fs');
 
-fs.readFile('number.txt', 'utf-8', (err, data) => {
+fs.readFile(path.join(__dirname, '..', 'number.txt'), 'utf-8', (err, data) => {
   if (err) {
   	throw err;
   }
@@ -10,7 +11,7 @@ fs.readFile('number.txt', 'utf-8', (err, data) => {
   // console.log(data);
 })
 
-fs.readFile('alphabet.txt', 'utf-8', (err, data) => {
+fs.readFile(path.join(__dirname, '..', 'alphabet.txt'), 'utf-8', (err, data) => {
   if (err) {
   	throw err;
   }

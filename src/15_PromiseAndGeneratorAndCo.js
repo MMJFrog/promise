@@ -1,12 +1,13 @@
 console.log(' ----- 開始（同期） ----- ');
 
-const fs = require('fs');
+const path    = require('path');
+const fs      = require('fs');
 const promise = require('promise');
-const co = require('co');
+const co      = require('co');
 
 function readFile(filename) {
   return new promise((resolve, reject) => {
-    fs.readFile(filename, 'utf-8', (err, data) => {
+    fs.readFile(path.join(__dirname, '..', filename), 'utf-8', (err, data) => {
       if (err) {
         reject(err);
       } else {

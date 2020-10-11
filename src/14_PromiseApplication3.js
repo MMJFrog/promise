@@ -1,12 +1,13 @@
 console.log(' ----- 開始（１つ） ----- ');
 console.log(' 今のChromeのバージョンでは未対応 ');
 
-const fs = require('fs');
+const path    = require('path');
+const fs      = require('fs');
 const promise = require('promise');
 
 function readFile(filename) {
   return new promise((resolve, reject) => {
-    fs.readFile(filename, 'utf-8', (err, data) => {
+    fs.readFile(path.join(__dirname, '..', filename), 'utf-8', (err, data) => {
       if (err) {
         reject(err);
       } else {
